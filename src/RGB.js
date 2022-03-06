@@ -78,11 +78,11 @@ export class RGB{
     }
 
     get red() { return this._red; }
-    set red(v) { this._mode="rgb";return this._red = Number(v);}
+    set red(v) { this._mode="rgb";this._red = Number(v);}
     get green() { return this._green; }
-    set green(v) { this._mode="rgb";return this._green = Number(v);}
+    set green(v) { this._mode="rgb";this._green = Number(v);}
     get blue() { return this._blue; }
-    set blue(v) { this._mode="rgb";return this._blue = Number(v);}
+    set blue(v) { this._mode="rgb";this._blue = Number(v);}
     get average()
     {
         const avg = (this.red+this.green+this.blue)/3;
@@ -97,7 +97,7 @@ export class RGB{
       return new RGB(this.red / avg, this.green / avg, this.blue / avg);
     }
 
-    _min_primary = ()=>
+    _min_primary()
 	{
 		return Math.min(this.red, Math.min(this.green,this.blue)); 
 	}
